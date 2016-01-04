@@ -39,4 +39,18 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  .factory('userInfo', ['$http', function userInfoService($http) {
+      var service = {};
+      service.get = function userInfoServiceGet(name, callback) {
+        $http({
+          method: 'GET',
+          url: '/users?name='+name.toString();
+        }).then(function successCallback(response) {
+          callback(null, response);
+        }, function errorCallback(response) {
+          callback(response);
+        });
+      };
+      return service;
+  }]);
