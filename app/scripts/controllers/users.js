@@ -12,7 +12,7 @@ angular.module('bilinigualsApp')
   	var context = this;
   	  userInfo.get('tyler', function(err, data) {
   	  	if(err) {
-  	  		console.log("Error encountered " + err.toString());
+  	  		console.log('Error encountered' + err.toString());
   	  	} else {
   	  		context.awesomeThings.push(data);
   	  	}

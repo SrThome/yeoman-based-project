@@ -45,7 +45,7 @@ angular
       service.get = function userInfoServiceGet(name, callback) {
         $http({
           method: 'GET',
-          url: '/users?name='+name.toString();
+          url: '/users?name=' + name.toString()
         }).then(function successCallback(response) {
           callback(null, response);
         }, function errorCallback(response) {
